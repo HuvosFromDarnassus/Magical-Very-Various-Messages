@@ -9,16 +9,28 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var statusLabel: UILabel!
     
-    override func viewDidLoad() {
+    private let viewModel: LoginViewModel = LoginViewModel()
+    
+    internal override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        bindViewModel()
     }
     
-    @IBAction func loginButtonPressed(_ sender: UIButton) {
+    @IBAction private func loginButtonPressed(_ sender: UIButton) {
+        if let email = emailTextField.text, let password = passwordTextField.text {
+            viewModel.loginUser(with: email, password)
+        }
+    }
+    
+    private func bindViewModel() {
+        viewModel.statusText.bind { (statusText) in
+            DispatchQueue.main.async {
+                self.statusLabel.text = statusText
+            }
+        }
     }
 }

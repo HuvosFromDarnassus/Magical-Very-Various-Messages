@@ -17,6 +17,11 @@
 		65E3560A2863B5D200BD0FDA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E356092863B5D200BD0FDA /* RegisterViewController.swift */; };
 		65E3560C2863B5E300BD0FDA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E3560B2863B5E300BD0FDA /* LoginViewController.swift */; };
 		65E3560E2863B5EE00BD0FDA /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E3560D2863B5EE00BD0FDA /* ChatViewController.swift */; };
+		65E356102863B8DB00BD0FDA /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E3560F2863B8DB00BD0FDA /* Message.swift */; };
+		65E356122863B9BE00BD0FDA /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E356112863B9BE00BD0FDA /* RegisterViewModel.swift */; };
+		65E356152863BA1900BD0FDA /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E356142863BA1900BD0FDA /* Dynamic.swift */; };
+		65E356172863BBAA00BD0FDA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E356162863BBAA00BD0FDA /* LoginViewModel.swift */; };
+		65E356192863BDB300BD0FDA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E356182863BDB300BD0FDA /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,11 @@
 		65E356092863B5D200BD0FDA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		65E3560B2863B5E300BD0FDA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		65E3560D2863B5EE00BD0FDA /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		65E3560F2863B8DB00BD0FDA /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		65E356112863B9BE00BD0FDA /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		65E356142863BA1900BD0FDA /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		65E356162863BBAA00BD0FDA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		65E356182863BDB300BD0FDA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +74,10 @@
 		65E355EC2863ABDA00BD0FDA /* MVVM Magical Very Various Messages */ = {
 			isa = PBXGroup;
 			children = (
-				65E356032863AC2100BD0FDA /* ViewModels */,
-				65E356022863AC0000BD0FDA /* Models */,
 				65E355ED2863ABDA00BD0FDA /* AppDelegate.swift */,
 				65E355EF2863ABDA00BD0FDA /* SceneDelegate.swift */,
+				65E356022863AC0000BD0FDA /* Models */,
+				65E356032863AC2100BD0FDA /* ViewModels */,
 				65E356012863ABF600BD0FDA /* Views */,
 				65E355F62863ABDB00BD0FDA /* Assets.xcassets */,
 				65E355FB2863ABDB00BD0FDA /* Info.plist */,
@@ -91,6 +101,7 @@
 		65E356022863AC0000BD0FDA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				65E3560F2863B8DB00BD0FDA /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -98,6 +109,10 @@
 		65E356032863AC2100BD0FDA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				65E356132863BA0800BD0FDA /* Bindings */,
+				65E356182863BDB300BD0FDA /* ViewModel.swift */,
+				65E356112863B9BE00BD0FDA /* RegisterViewModel.swift */,
+				65E356162863BBAA00BD0FDA /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -109,6 +124,14 @@
 				65E355F82863ABDB00BD0FDA /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		65E356132863BA0800BD0FDA /* Bindings */ = {
+			isa = PBXGroup;
+			children = (
+				65E356142863BA1900BD0FDA /* Dynamic.swift */,
+			);
+			path = Bindings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,11 +206,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				65E3560C2863B5E300BD0FDA /* LoginViewController.swift in Sources */,
+				65E356152863BA1900BD0FDA /* Dynamic.swift in Sources */,
+				65E356172863BBAA00BD0FDA /* LoginViewModel.swift in Sources */,
 				65E356082863B2CC00BD0FDA /* WelcomeViewController.swift in Sources */,
 				65E3560A2863B5D200BD0FDA /* RegisterViewController.swift in Sources */,
 				65E3560E2863B5EE00BD0FDA /* ChatViewController.swift in Sources */,
 				65E355EE2863ABDA00BD0FDA /* AppDelegate.swift in Sources */,
+				65E356102863B8DB00BD0FDA /* Message.swift in Sources */,
 				65E355F02863ABDA00BD0FDA /* SceneDelegate.swift in Sources */,
+				65E356122863B9BE00BD0FDA /* RegisterViewModel.swift in Sources */,
+				65E356192863BDB300BD0FDA /* ViewModel.swift in Sources */,
 				65E356052863B1DA00BD0FDA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

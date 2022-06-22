@@ -9,16 +9,28 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var statusLabel: UILabel!
     
-    override func viewDidLoad() {
+    private let viewModel: RegisterViewModel = RegisterViewModel()
+    
+    internal override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        bindViewModel()
     }
     
-    @IBAction func registerButtonPressed(_ sender: UIButton) {
+    @IBAction private func registerButtonPressed(_ sender: UIButton) {
+        if let email = emailTextField.text, let password = passwordTextField.text {
+            viewModel.registerUser(with: email, password)
+        }
+    }
+    
+    private func bindViewModel() {
+        viewModel.statusText.bind { (statusText) in
+            DispatchQueue.main.async {
+                self.statusLabel.text = statusText
+            }
+        }
     }
 }

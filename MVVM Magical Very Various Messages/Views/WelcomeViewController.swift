@@ -9,11 +9,9 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
-    @IBOutlet weak var appNameLabel: UILabel!
+    @IBOutlet private weak var appNameLabel: UILabel!
     
-    override func viewDidLoad() {
+    internal override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 }
