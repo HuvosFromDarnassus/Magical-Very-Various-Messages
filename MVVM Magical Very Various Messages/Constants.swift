@@ -12,6 +12,14 @@ struct Constants {
     static let cellNibName = "MessageTableViewCell"
     static let cellIdentifire = "ReusableCell"
     
+    struct Styles {
+        static let blue = "backgroundBlue"
+        static let yellow = "contrastYellow"
+        static let lightYellow = "lightYellow"
+        static let success = "successGreen"
+        static let failure = "dangerRed"
+    }
+    
     struct FB {
         static let registerSuccess = "You successfully signed up"
         static let registerFailure = "Sign up failed:"

@@ -29,10 +29,12 @@ class RegisterViewController: UIViewController {
     private func bindViewModel() {
         viewModel.status.bind { (statusText, _, status) in
             DispatchQueue.main.async {
-                self.statusLabel.isHidden = false
-                self.statusLabel.text = statusText
                 if status == .success {
                     self.performSegue(withIdentifier: Constants.registerSegue, sender: self)
+                } else {
+                    self.statusLabel.isHidden = false
+                    self.statusLabel.text = statusText
+                    self.statusLabel.textColor = UIColor(named: Constants.Styles.failure)
                 }
             }
         }

@@ -9,7 +9,7 @@ class Dynamic<T> {
     typealias Listener = ((String, T, Status)) -> Void
     private var listener: Listener?
     
-    var value: (String, T, Status) {
+    public var value: (String, T, Status) {
         didSet {
             listener?(value)
         }

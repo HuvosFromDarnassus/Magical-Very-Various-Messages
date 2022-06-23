@@ -38,7 +38,7 @@ class ChatViewController: UIViewController {
         messageTextField.text = ""
     }
     
-    @IBAction func logoutButtonPressed(_ sender: UIBarButtonItem) {
+    @IBAction private func logoutButtonPressed(_ sender: UIBarButtonItem) {
         viewModel.logoutUser()
         navigationController?.popToRootViewController(animated: true)
     }
@@ -58,6 +58,7 @@ class ChatViewController: UIViewController {
     private func setupViewController() {
         title = Constants.appName
         navigationItem.hidesBackButton = true
+        navigationController?.navigationBar.tintColor = .link
     }
     
     private func setupTableView(by messageCount: Int) {
