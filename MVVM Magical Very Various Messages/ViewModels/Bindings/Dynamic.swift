@@ -5,17 +5,17 @@
 //  Created by Daniel Tvorun on 22.06.2022.
 //
 
-class Dynamic<T> {
-    typealias Listener = (T) -> Void
+class Dynamic {
+    typealias Listener = ((String, Status)) -> Void
     private var listener: Listener?
     
-    private var value: T {
+    var value: (String, Status) {
         didSet {
             listener?(value)
         }
     }
     
-    public init(_ v: T) {
+    public init(_ v: (String, Status)) {
         value = v
     }
     

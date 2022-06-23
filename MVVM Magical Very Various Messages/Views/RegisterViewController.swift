@@ -27,9 +27,13 @@ class RegisterViewController: UIViewController {
     }
     
     private func bindViewModel() {
-        viewModel.statusText.bind { (statusText) in
+        viewModel.status.bind { (statusText, status) in
             DispatchQueue.main.async {
+                self.statusLabel.isHidden = false
                 self.statusLabel.text = statusText
+                if status == .success {
+                    self.performSegue(withIdentifier: Constants.registerSegue, sender: self)
+                }
             }
         }
     }
