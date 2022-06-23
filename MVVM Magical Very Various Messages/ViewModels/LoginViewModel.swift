@@ -13,13 +13,13 @@ class LoginViewModel: ViewModel {
           guard let strongSelf = self else { return }
           
             if let e = error {
-                strongSelf.status.value = ("\(Constants.FB.loginFailure) \(e.localizedDescription)", .failure)
+                strongSelf.status.value = ("\(Constants.FB.loginFailure) \(e.localizedDescription)", [], .failure)
                 print("SIGN IN ERROR: \(e.localizedDescription)")
                 
                 return
             }
             
-            strongSelf.status.value = (Constants.FB.registerSuccess, .success)
+            strongSelf.status.value = (Constants.FB.registerSuccess, [], .success)
         }
     }
 }

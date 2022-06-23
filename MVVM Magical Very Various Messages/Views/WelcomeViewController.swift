@@ -13,5 +13,6 @@ class WelcomeViewController: UIViewController {
     
     internal override func viewDidLoad() {
         super.viewDidLoad()
+        appNameLabel.text = Constants.appName
     }
 }

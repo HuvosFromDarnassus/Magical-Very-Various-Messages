@@ -11,5 +11,5 @@ enum Status {
 }
 
 class ViewModel {
-    public var status = Dynamic(("", .failure))
+    public var status = Dynamic(("", [], .failure))
 }

@@ -17,16 +17,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bxg-eb-SbH">
-                                <rect key="frame" x="87" y="423.5" width="240.5" height="49"/>
+                                <rect key="frame" x="87" y="409" width="240.5" height="78.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MVVM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCv-XF-GdM">
-                                        <rect key="frame" x="94.5" y="0.0" width="51" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCv-XF-GdM">
+                                        <rect key="frame" x="95" y="0.0" width="50" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Magical Very Various Messages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYG-bx-Y9L">
-                                        <rect key="frame" x="0.0" y="28.5" width="240.5" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="58" width="240.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -83,15 +83,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bxI-F4-XME">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bxI-F4-XME">
                                 <rect key="frame" x="25" y="113" width="364" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vxD-UY-o0f">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vxD-UY-o0f">
                                 <rect key="frame" x="25" y="172" width="364" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OwF-9R-T0W">
                                 <rect key="frame" x="186" y="231" width="42" height="21"/>
@@ -146,15 +146,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="X32-fo-11J">
-                                <rect key="frame" x="0.0" y="828" width="414" height="34"/>
+                                <rect key="frame" x="10" y="822" width="394" height="40"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fca-9b-oCV">
-                                        <rect key="frame" x="0.0" y="0.0" width="327.5" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="307" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="GwJ-kQ-gWM"/>
+                                            <constraint firstAttribute="width" constant="307" id="Gzy-8Z-3YC"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQE-Z2-egl">
-                                        <rect key="frame" x="356.5" y="0.0" width="57.5" height="34"/>
+                                        <rect key="frame" x="336" y="0.0" width="58" height="40"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Send"/>
                                         <connections>
@@ -162,9 +166,12 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="MQE-Z2-egl" firstAttribute="leading" secondItem="fca-9b-oCV" secondAttribute="trailing" id="4fd-yg-HUi"/>
+                                </constraints>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ud8-qR-3NC">
-                                <rect key="frame" x="0.0" y="88" width="414" height="740"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ud8-qR-3NC">
+                                <rect key="frame" x="0.0" y="88" width="414" height="724"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -173,15 +180,21 @@
                         <constraints>
                             <constraint firstItem="hyV-XK-eho" firstAttribute="trailing" secondItem="ud8-qR-3NC" secondAttribute="trailing" id="7fX-bl-7J7"/>
                             <constraint firstItem="X32-fo-11J" firstAttribute="centerX" secondItem="1Wk-kt-HkE" secondAttribute="centerX" id="BXn-HU-fyW"/>
-                            <constraint firstItem="hyV-XK-eho" firstAttribute="trailing" secondItem="X32-fo-11J" secondAttribute="trailing" id="CxZ-kP-qfW"/>
-                            <constraint firstItem="X32-fo-11J" firstAttribute="leading" secondItem="hyV-XK-eho" secondAttribute="leading" id="Ujp-xc-ere"/>
+                            <constraint firstItem="hyV-XK-eho" firstAttribute="trailing" secondItem="X32-fo-11J" secondAttribute="trailing" constant="10" id="CxZ-kP-qfW"/>
+                            <constraint firstItem="X32-fo-11J" firstAttribute="leading" secondItem="hyV-XK-eho" secondAttribute="leading" constant="10" id="Ujp-xc-ere"/>
                             <constraint firstItem="ud8-qR-3NC" firstAttribute="top" secondItem="hyV-XK-eho" secondAttribute="top" id="Y02-Ja-EF9"/>
-                            <constraint firstItem="X32-fo-11J" firstAttribute="top" secondItem="ud8-qR-3NC" secondAttribute="bottom" id="YNS-pa-4xn"/>
+                            <constraint firstItem="X32-fo-11J" firstAttribute="top" secondItem="ud8-qR-3NC" secondAttribute="bottom" constant="10" id="YNS-pa-4xn"/>
                             <constraint firstItem="ud8-qR-3NC" firstAttribute="leading" secondItem="hyV-XK-eho" secondAttribute="leading" id="Yuh-Y6-kHw"/>
                             <constraint firstItem="hyV-XK-eho" firstAttribute="bottom" secondItem="X32-fo-11J" secondAttribute="bottom" id="hdX-vc-8Jj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="fzn-Ym-bu3"/>
+                    <navigationItem key="navigationItem" id="fzn-Ym-bu3">
+                        <barButtonItem key="rightBarButtonItem" title="Log out" id="tBW-Px-3vS">
+                            <connections>
+                                <action selector="logoutButtonPressed:" destination="zcp-nh-XYz" id="dbU-s8-8pd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="chatTableView" destination="ud8-qR-3NC" id="Dka-DH-oES"/>
                         <outlet property="messageTextField" destination="fca-9b-oCV" id="fOT-0Q-oKq"/>
@@ -199,15 +212,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vov-Pr-Y0e">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Vov-Pr-Y0e">
                                 <rect key="frame" x="25" y="113" width="364" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Qb-Sn-vnJ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9Qb-Sn-vnJ">
                                 <rect key="frame" x="25" y="172" width="364" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldb-7P-kEW">
                                 <rect key="frame" x="186" y="231" width="42" height="21"/>

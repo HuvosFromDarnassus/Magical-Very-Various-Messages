@@ -27,7 +27,7 @@ class RegisterViewController: UIViewController {
     }
     
     private func bindViewModel() {
-        viewModel.status.bind { (statusText, status) in
+        viewModel.status.bind { (statusText, _, status) in
             DispatchQueue.main.async {
                 self.statusLabel.isHidden = false
                 self.statusLabel.text = statusText
