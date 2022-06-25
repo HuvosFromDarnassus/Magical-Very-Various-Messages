@@ -13,13 +13,14 @@ This project is based on the App Brewery 🍺 project, but rewritten from scratc
 
 ## 📸 Screenshots
 
-![App Screenshots](demo/screenshots.png)
+![App Screenshots](https://user-images.githubusercontent.com/58942445/175792516-a5fbe8c2-83cf-42c5-b6d0-4036d527d5f5.png)
+
 
 
 ## ⚙️ Scheme
 
 
-![Scheme](demo/scheme.png)
+![Scheme]
 
 
 ## 🔨 Tech Stack
