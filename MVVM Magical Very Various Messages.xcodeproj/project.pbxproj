@@ -397,6 +397,7 @@
 				DEVELOPMENT_TEAM = 9D3QPUYX6Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MVVM Magical Very Various Messages/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Magical Very Various Messages";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -425,6 +426,7 @@
 				DEVELOPMENT_TEAM = 9D3QPUYX6Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MVVM Magical Very Various Messages/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Magical Very Various Messages";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

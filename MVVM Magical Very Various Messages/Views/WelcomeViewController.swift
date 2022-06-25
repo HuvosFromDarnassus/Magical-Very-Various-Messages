@@ -11,12 +11,10 @@ class WelcomeViewController: UIViewController {
 
     @IBOutlet private weak var appNameLabel: UILabel!
     
-    internal override func viewDidLoad() {
-        super.viewDidLoad()
-        animateLabel()
-    }
-    
     internal override func viewWillAppear(_ animated: Bool) {
+        appNameLabel.text = ""
+        animateLabel()
+        
         navigationController?.navigationBar.tintColor = UIColor(named: Constants.Styles.yellow)
     }
     
