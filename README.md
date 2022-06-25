@@ -8,7 +8,7 @@ This project is based on the App Brewery 🍺 project, but rewritten from scratc
 
 ## 🎨 Demo
 
-![Demo GIF](demo/demo.gif)
+![Demo video](https://user-images.githubusercontent.com/58942445/175792209-938c7768-9b4a-472b-9bbb-becc0c94a1ae.mov)
 
 
 ## 📸 Screenshots
@@ -17,6 +17,7 @@ This project is based on the App Brewery 🍺 project, but rewritten from scratc
 
 
 ## ⚙️ Scheme
+
 
 ![Scheme](demo/scheme.png)
 
