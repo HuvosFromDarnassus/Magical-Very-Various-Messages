@@ -1,0 +1,29 @@
+![Logo](https://github.com/HuvosFromDarnassus/Magical-Very-Various-Messages/blob/de48c0ba08b70297059f3f5f9d2a0428ae0f7008/MVVM%20Magical%20Very%20Various%20Messages/Assets.xcassets/AppIcon.appiconset/180.png)
+
+# Magical-Very-Various-Messages
+
+📱 Very simple and lightweight messenger using Firebase 🔥. It is a training project for the practice of MVVM architecture.
+This project is based on the App Brewery 🍺 project, but rewritten from scratch using the MVVM architecture.
+
+
+## 🎨 Demo
+
+![Demo GIF](demo/demo.gif)
+
+
+## 📸 Screenshots
+
+![App Screenshots](demo/screenshots.png)
+
+
+## ⚙️ Scheme
+
+![Scheme](demo/scheme.png)
+
+
+## 🔨 Tech Stack
+
+- UIKit
+- Storyboard
+- Firebase 🔥
+- MVVM
