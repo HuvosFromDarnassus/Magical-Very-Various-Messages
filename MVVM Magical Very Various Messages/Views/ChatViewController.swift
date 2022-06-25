@@ -16,10 +16,16 @@ class ChatViewController: UIViewController {
     
     private var messages: [Message] = []
     
+    public var didUserSignedUp: Bool? {
+        didSet {
+            viewModel.prepareMessage(by: Constants.welcomeMessage)
+        }
+    }
+    
     internal override func viewDidLoad() {
         super.viewDidLoad()
         chatTableView.dataSource = self
-        chatTableView.register(UINib(nibName: Constants.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifire)
+        chatTableView.register(UINib(nibName: Constants.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier)
         
         bindViewModel()
         
@@ -31,11 +37,15 @@ class ChatViewController: UIViewController {
     }
     
     @IBAction private func sendMessageButtonPressed(_ sender: UIButton) {
-        if let messageBody = messageTextField.text {
-            viewModel.prepareMessage(by: messageBody)
+        guard let messageBody = messageTextField.text, !messageBody.isEmpty else {
+            messageTextField.placeholder = "Type something"
+            return
         }
         
+        viewModel.prepareMessage(by: messageBody)
+        
         messageTextField.text = ""
+        messageTextField.placeholder = "Message text"
     }
     
     @IBAction private func logoutButtonPressed(_ sender: UIBarButtonItem) {
@@ -58,7 +68,7 @@ class ChatViewController: UIViewController {
     private func setupViewController() {
         title = Constants.appName
         navigationItem.hidesBackButton = true
-        navigationController?.navigationBar.tintColor = .link
+        navigationController?.navigationBar.tintColor = UIColor(named: Constants.Styles.blue)
     }
     
     private func setupTableView(by messageCount: Int) {
@@ -81,18 +91,20 @@ extension ChatViewController: UITableViewDataSource {
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let message = messages[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifire, for: indexPath) as! MessageTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as! MessageTableViewCell
         
         cell.messageText.text = message.body
         
         if viewModel.checkMessageSender(by: message.sender) {
             cell.rightImageView.isHidden = false
             cell.leftImageView.isHidden = true
-            cell.messageBubble.backgroundColor = UIColor.link
+            cell.messageBubble.backgroundColor = UIColor(named: Constants.Styles.blue)
+            cell.messageText.textColor = UIColor(named: Constants.Styles.lightYellow)
         } else {
             cell.leftImageView.isHidden = false
             cell.rightImageView.isHidden = true
-            cell.messageBubble.backgroundColor = UIColor.systemGreen
+            cell.messageBubble.backgroundColor = UIColor(named: Constants.Styles.lightYellow)
+            cell.messageText.textColor = UIColor(named: Constants.Styles.blue)
         }
         
         return cell

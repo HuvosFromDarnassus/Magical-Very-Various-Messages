@@ -39,4 +39,11 @@ class RegisterViewController: UIViewController {
             }
         }
     }
+    
+    internal override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.registerSegue {
+            let destination = segue.destination as! ChatViewController
+            destination.didUserSignedUp = true
+        }
+    }
 }

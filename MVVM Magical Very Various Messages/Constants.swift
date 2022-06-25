@@ -10,7 +10,8 @@ struct Constants {
     static let registerSegue = "RegisterToChat"
     static let loginSegue = "LoginToChat"
     static let cellNibName = "MessageTableViewCell"
-    static let cellIdentifire = "ReusableCell"
+    static let cellIdentifier = "ReusableCell"
+    static let welcomeMessage = "Welcome to MVVM 👋, write something cool 🤙."
     
     struct Styles {
         static let blue = "backgroundBlue"
