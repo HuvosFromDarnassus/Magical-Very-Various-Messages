@@ -2,8 +2,8 @@
 
 # Magical-Very-Various-Messages
 
-📱 Very simple and lightweight messenger using Firebase 🔥. It is a training project for the practice of MVVM architecture.
-This project is based on the App Brewery 🍺 project, but rewritten from scratch using the MVVM architecture.
+Very simple and lightweight messenger using Firebase. It is a training project for the practice of MVVM architecture.
+This project is based on the App Brewery project, but rewritten from scratch using the MVVM architecture.
 
 
 ## 🎨 Demo
@@ -19,8 +19,7 @@ This project is based on the App Brewery 🍺 project, but rewritten from scratc
 
 ## ⚙️ Scheme
 
-
-![Scheme]
+![Scheme](https://user-images.githubusercontent.com/58942445/175810533-feeb0a9b-fce1-43f2-8edd-14cd1e6d99d1.png)
 
 
 ## 🔨 Tech Stack
