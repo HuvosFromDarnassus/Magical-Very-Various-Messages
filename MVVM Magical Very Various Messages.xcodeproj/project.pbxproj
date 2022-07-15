@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65E1068528818DB7000C9830 /* LoginRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E1068428818DB7000C9830 /* LoginRegisterViewModel.swift */; };
+		65E1068928819AA8000C9830 /* StatusDisplayble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E1068828819AA8000C9830 /* StatusDisplayble.swift */; };
+		65E1068B28819B16000C9830 /* LoginRegisterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E1068A28819B16000C9830 /* LoginRegisterProtocol.swift */; };
+		65E1068D28819B4C000C9830 /* ViewModelBindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E1068C28819B4C000C9830 /* ViewModelBindable.swift */; };
 		65E355EE2863ABDA00BD0FDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E355ED2863ABDA00BD0FDA /* AppDelegate.swift */; };
 		65E355F02863ABDA00BD0FDA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E355EF2863ABDA00BD0FDA /* SceneDelegate.swift */; };
 		65E355F52863ABDA00BD0FDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E355F32863ABDA00BD0FDA /* Main.storyboard */; };
@@ -21,7 +25,6 @@
 		65E356122863B9BE00BD0FDA /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E356112863B9BE00BD0FDA /* RegisterViewModel.swift */; };
 		65E356152863BA1900BD0FDA /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E356142863BA1900BD0FDA /* Dynamic.swift */; };
 		65E356172863BBAA00BD0FDA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E356162863BBAA00BD0FDA /* LoginViewModel.swift */; };
-		65E356192863BDB300BD0FDA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E356182863BDB300BD0FDA /* ViewModel.swift */; };
 		65E356202863C7F500BD0FDA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 65E3561F2863C7F500BD0FDA /* FirebaseAuth */; };
 		65E356222863C7F500BD0FDA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 65E356212863C7F500BD0FDA /* FirebaseFirestore */; };
 		65E356252864600400BD0FDA /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E356232864600400BD0FDA /* MessageTableViewCell.swift */; };
@@ -32,6 +35,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65E1068428818DB7000C9830 /* LoginRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterViewModel.swift; sourceTree = "<group>"; };
+		65E1068828819AA8000C9830 /* StatusDisplayble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusDisplayble.swift; sourceTree = "<group>"; };
+		65E1068A28819B16000C9830 /* LoginRegisterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterProtocol.swift; sourceTree = "<group>"; };
+		65E1068C28819B4C000C9830 /* ViewModelBindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBindable.swift; sourceTree = "<group>"; };
 		65E355EA2863ABDA00BD0FDA /* MVVM Magical Very Various Messages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM Magical Very Various Messages.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E355ED2863ABDA00BD0FDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65E355EF2863ABDA00BD0FDA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +55,6 @@
 		65E356112863B9BE00BD0FDA /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		65E356142863BA1900BD0FDA /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		65E356162863BBAA00BD0FDA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		65E356182863BDB300BD0FDA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		65E356232864600400BD0FDA /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		65E35627286472E800BD0FDA /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		65E35630286754A000BD0FDA /* MessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
@@ -69,6 +75,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65E1068E28819B9B000C9830 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				65E1068A28819B16000C9830 /* LoginRegisterProtocol.swift */,
+				65E1068C28819B4C000C9830 /* ViewModelBindable.swift */,
+				65E1068828819AA8000C9830 /* StatusDisplayble.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		65E355E12863ABDA00BD0FDA = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +107,7 @@
 				65E355ED2863ABDA00BD0FDA /* AppDelegate.swift */,
 				65E355EF2863ABDA00BD0FDA /* SceneDelegate.swift */,
 				65E356042863B1DA00BD0FDA /* Constants.swift */,
+				65E1068E28819B9B000C9830 /* Protocols */,
 				65E356022863AC0000BD0FDA /* Models */,
 				65E356032863AC2100BD0FDA /* ViewModels */,
 				65E356012863ABF600BD0FDA /* Views */,
@@ -125,8 +142,8 @@
 		65E356032863AC2100BD0FDA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				65E1068428818DB7000C9830 /* LoginRegisterViewModel.swift */,
 				65E356132863BA0800BD0FDA /* Bindings */,
-				65E356182863BDB300BD0FDA /* ViewModel.swift */,
 				65E356112863B9BE00BD0FDA /* RegisterViewModel.swift */,
 				65E356162863BBAA00BD0FDA /* LoginViewModel.swift */,
 				65E35627286472E800BD0FDA /* ChatViewModel.swift */,
@@ -235,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65E3560C2863B5E300BD0FDA /* LoginViewController.swift in Sources */,
+				65E1068B28819B16000C9830 /* LoginRegisterProtocol.swift in Sources */,
 				65E356152863BA1900BD0FDA /* Dynamic.swift in Sources */,
 				65E356172863BBAA00BD0FDA /* LoginViewModel.swift in Sources */,
 				65E356082863B2CC00BD0FDA /* WelcomeViewController.swift in Sources */,
@@ -243,10 +261,12 @@
 				65E355EE2863ABDA00BD0FDA /* AppDelegate.swift in Sources */,
 				65E356252864600400BD0FDA /* MessageTableViewCell.swift in Sources */,
 				65E35628286472E800BD0FDA /* ChatViewModel.swift in Sources */,
+				65E1068D28819B4C000C9830 /* ViewModelBindable.swift in Sources */,
 				65E356102863B8DB00BD0FDA /* Message.swift in Sources */,
 				65E355F02863ABDA00BD0FDA /* SceneDelegate.swift in Sources */,
+				65E1068528818DB7000C9830 /* LoginRegisterViewModel.swift in Sources */,
 				65E356122863B9BE00BD0FDA /* RegisterViewModel.swift in Sources */,
-				65E356192863BDB300BD0FDA /* ViewModel.swift in Sources */,
+				65E1068928819AA8000C9830 /* StatusDisplayble.swift in Sources */,
 				65E356052863B1DA00BD0FDA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,7 +428,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.danieltvorun.MVVM-Magical-Very-Various-Messages";
+				PRODUCT_BUNDLE_IDENTIFIER = com.danieltvorun.MVVMMagicalVeryVariousMessages;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -437,7 +457,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.danieltvorun.MVVM-Magical-Very-Various-Messages";
+				PRODUCT_BUNDLE_IDENTIFIER = com.danieltvorun.MVVMMagicalVeryVariousMessages;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

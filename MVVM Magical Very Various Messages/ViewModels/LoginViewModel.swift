@@ -7,19 +7,19 @@
 
 import Firebase
 
-class LoginViewModel: ViewModel {
+class LoginViewModel: LoginRegisterViewModel {
     public func loginUser(with email: String, _ password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-          guard let strongSelf = self else { return }
-          
+            guard let strongSelf = self else { return }
+            
             if let e = error {
-                strongSelf.status.value = ("\(Constants.FB.loginFailure) \(e.localizedDescription)", [], .failure)
-                print("SIGN IN ERROR: \(e.localizedDescription)")
+                strongSelf.setStatus(.failure, value: "\(Constants.FB.loginFailure) \(e.localizedDescription)", type: strongSelf)
                 
+                print("SIGN IN ERROR: \(e.localizedDescription)")
                 return
             }
             
-            strongSelf.status.value = (Constants.FB.registerSuccess, [], .success)
+            strongSelf.setStatus(.success, value: Constants.FB.registerSuccess, type: strongSelf)
         }
     }
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var statusLabel: UILabel!
@@ -25,19 +25,27 @@ class LoginViewController: UIViewController {
             viewModel.loginUser(with: email, password)
         }
     }
-    
-    private func bindViewModel() {
-        viewModel.status.bind { (statusText, _, status) in
-            DispatchQueue.main.async {
-                
-                if status == .success {
-                    self.performSegue(withIdentifier: Constants.loginSegue, sender: self)
-                } else {
-                    self.statusLabel.isHidden = false
-                    self.statusLabel.text = statusText
-                    self.statusLabel.textColor = UIColor(named: Constants.Styles.failure)
-                }
+}
+
+// MARK: - LoginRegisterProtocol
+extension LoginViewController: LoginRegisterProtocol {
+    internal func bindViewModel() {
+        viewModel.status.bind { status in
+            if status == .success {
+                self.performSegue(withIdentifier: Constants.loginSegue, sender: self)
             }
         }
+        
+        viewModel.statusText.bind { statusText in
+            DispatchQueue.main.async {
+                self.displayStatus(with: statusText)
+            }
+        }
+    }
+    
+    internal func displayStatus(with text: String) {
+        self.statusLabel.isHidden = false
+        self.statusLabel.text = text
+        self.statusLabel.textColor = UIColor.white
     }
 }

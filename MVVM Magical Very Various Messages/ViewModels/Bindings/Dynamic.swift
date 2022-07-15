@@ -6,16 +6,16 @@
 //
 
 class Dynamic<T> {
-    typealias Listener = ((String, T, Status)) -> Void
+    typealias Listener = (T) -> Void
     private var listener: Listener?
     
-    public var value: (String, T, Status) {
+    public var value: (T) {
         didSet {
             listener?(value)
         }
     }
     
-    public init(_ v: (String, T, Status)) {
+    public init(_ v: T) {
         value = v
     }
     

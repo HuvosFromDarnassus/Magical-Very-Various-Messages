@@ -16,24 +16,11 @@ class ChatViewController: UIViewController {
     
     private var messages: [Message] = []
     
-    public var didUserSignedUp: Bool? {
-        didSet {
-            viewModel.prepareMessage(by: Constants.welcomeMessage)
-        }
-    }
-    
     internal override func viewDidLoad() {
         super.viewDidLoad()
-        chatTableView.dataSource = self
-        chatTableView.register(UINib(nibName: Constants.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier)
-        
-        bindViewModel()
-        
-        viewModel.loadMessages()
-    }
-    
-    internal override func viewWillAppear(_ animated: Bool) {
         setupViewController()
+        bindViewModel()
+        viewModel.loadMessages()
     }
     
     @IBAction private func sendMessageButtonPressed(_ sender: UIButton) {
@@ -41,11 +28,8 @@ class ChatViewController: UIViewController {
             messageTextField.placeholder = "Type something"
             return
         }
-        
         viewModel.prepareMessage(by: messageBody)
-        
-        messageTextField.text = ""
-        messageTextField.placeholder = "Message text"
+        resetTextField()
     }
     
     @IBAction private func logoutButtonPressed(_ sender: UIBarButtonItem) {
@@ -53,22 +37,25 @@ class ChatViewController: UIViewController {
         navigationController?.popToRootViewController(animated: true)
     }
     
-    private func bindViewModel() {
-        viewModel.status.bind { (_, messages, status) in
-            if status == .success {
-                if let unwrappedMessages = messages as? [Message] {
-                    self.messages = unwrappedMessages
-                }
-                
-                self.setupTableView(by: self.messages.count)
-            }
-        }
+    private func resetTextField() {
+        messageTextField.text = ""
+        messageTextField.placeholder = "Message text"
     }
     
-    private func setupViewController() {
+    private func setupTableDataSource() {
+        chatTableView.dataSource = self
+        chatTableView.register(UINib(nibName: Constants.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier)
+    }
+    
+    private func setupNavigationController() {
         title = Constants.appName
         navigationItem.hidesBackButton = true
         navigationController?.navigationBar.tintColor = UIColor(named: Constants.Styles.blue)
+    }
+    
+    private func setupViewController() {
+        setupTableDataSource()
+        setupNavigationController()
     }
     
     private func setupTableView(by messageCount: Int) {
@@ -77,8 +64,22 @@ class ChatViewController: UIViewController {
         }
         
         self.chatTableView.reloadData()
+        
         let indexPath = IndexPath(row: messageCount == 0 ? 0 : messageCount - 1, section: 0)
         self.chatTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+    }
+}
+
+// MARK: - ViewModelBindable
+extension ChatViewController: ViewModelBindable {
+    internal func bindViewModel() {
+        viewModel.messages.bind { (messages) in
+            self.messages = messages
+            
+            DispatchQueue.main.async {
+                self.setupTableView(by: messages.count)
+            }
+        }
     }
 }
 
@@ -89,24 +90,40 @@ extension ChatViewController: UITableViewDataSource {
     }
     
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let message = messages[indexPath.row]
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as! MessageTableViewCell
         
-        cell.messageText.text = message.body
-        
-        if viewModel.checkMessageSender(by: message.sender) {
-            cell.rightImageView.isHidden = false
-            cell.leftImageView.isHidden = true
-            cell.messageBubble.backgroundColor = UIColor(named: Constants.Styles.blue)
-            cell.messageText.textColor = UIColor(named: Constants.Styles.lightYellow)
-        } else {
-            cell.leftImageView.isHidden = false
-            cell.rightImageView.isHidden = true
-            cell.messageBubble.backgroundColor = UIColor(named: Constants.Styles.lightYellow)
-            cell.messageText.textColor = UIColor(named: Constants.Styles.blue)
+        if !messages.isEmpty {
+            let message = messages[indexPath.row]
+            cell.messageText.text = message.body
+            
+            setupMessageBox(by: message.sender, using: cell)
         }
         
         return cell
+    }
+    
+    private func setupMessageBox(by sender: String, using cell: MessageTableViewCell) {
+        if viewModel.checkMessageSender(by: sender) {
+            setupCurrentUserMessageBox(using: cell)
+        } else {
+            setupOtherUserMessageBox(using: cell)
+        }
+    }
+    
+    private func changeMessageColors(_ bubbleColor: String, _ textColor: String, for cell: MessageTableViewCell) {
+        cell.messageBubble.backgroundColor = UIColor(named: bubbleColor)
+        cell.messageText.textColor = UIColor(named: textColor)
+    }
+    
+    private func setupCurrentUserMessageBox(using cell: MessageTableViewCell) {
+        cell.rightImageView.isHidden = false
+        cell.leftImageView.isHidden = true
+        changeMessageColors(Constants.Styles.blue, Constants.Styles.lightYellow, for: cell)
+    }
+    
+    private func setupOtherUserMessageBox(using cell: MessageTableViewCell) {
+        cell.leftImageView.isHidden = false
+        cell.rightImageView.isHidden = true
+        changeMessageColors(Constants.Styles.lightYellow, Constants.Styles.blue, for: cell)
     }
 }

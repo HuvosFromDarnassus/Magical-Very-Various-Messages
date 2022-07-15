@@ -8,7 +8,7 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-
+    
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var statusLabel: UILabel!
@@ -25,25 +25,27 @@ class RegisterViewController: UIViewController {
             viewModel.registerUser(with: email, password)
         }
     }
-    
-    private func bindViewModel() {
-        viewModel.status.bind { (statusText, _, status) in
+}
+
+// MARK: - LoginRegisterProtocol
+extension RegisterViewController: LoginRegisterProtocol {
+    internal func bindViewModel() {
+        viewModel.status.bind { status in
+            if status == .success {
+                self.performSegue(withIdentifier: Constants.registerSegue, sender: self)
+            }
+        }
+        
+        viewModel.statusText.bind { statusText in
             DispatchQueue.main.async {
-                if status == .success {
-                    self.performSegue(withIdentifier: Constants.registerSegue, sender: self)
-                } else {
-                    self.statusLabel.isHidden = false
-                    self.statusLabel.text = statusText
-                    self.statusLabel.textColor = UIColor(named: Constants.Styles.failure)
-                }
+                self.displayStatus(with: statusText)
             }
         }
     }
     
-    internal override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Constants.registerSegue {
-            let destination = segue.destination as! ChatViewController
-            destination.didUserSignedUp = true
-        }
+    internal func displayStatus(with text: String) {
+        self.statusLabel.isHidden = false
+        self.statusLabel.text = text
+        self.statusLabel.textColor = UIColor.white
     }
 }
