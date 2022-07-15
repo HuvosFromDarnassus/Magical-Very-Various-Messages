@@ -20,7 +20,7 @@ class ChatViewModel {
                 Constants.FB.dateField: Date().timeIntervalSince1970
             ]) { error in
                 if let e = error {
-                    print("MESSAGE APPENDING ERROR: \(e.localizedDescription)")
+                    print("\(Constants.E.messageAppendingError) \(e.localizedDescription)")
                     return
                 }
             }
@@ -32,7 +32,7 @@ class ChatViewModel {
             .order(by: Constants.FB.dateField)
             .addSnapshotListener { querySnapshot, error in
                 if let e = error {
-                    print("MESSAGE LOADING ERROR: \(e.localizedDescription)")
+                    print("\(Constants.E.messageLoadingError) \(e.localizedDescription)")
                     return
                 }
                 
@@ -66,7 +66,7 @@ class ChatViewModel {
         do {
             try Auth.auth().signOut()
         } catch let signOutError as NSError {
-            print("SIGN OUT ERROR: \(signOutError.localizedDescription)")
+            print("\(Constants.E.userLogoutError) \(signOutError.localizedDescription)")
         }
     }
 }

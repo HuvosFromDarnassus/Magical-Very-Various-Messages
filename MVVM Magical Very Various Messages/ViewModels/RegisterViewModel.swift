@@ -13,7 +13,7 @@ class RegisterViewModel: LoginRegisterViewModel {
             if let e = error {
                 self.setStatus(.failure, value: "\(Constants.FB.registerFailure) \(e.localizedDescription)", type: self)
                 
-                print("SIGN UP ERROR: \(e.localizedDescription)")
+                print("\(Constants.E.userRegisterError) \(e.localizedDescription)")
                 return
             }
             

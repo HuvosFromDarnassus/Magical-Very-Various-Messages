@@ -11,7 +11,10 @@ struct Constants {
     static let loginSegue = "LoginToChat"
     static let cellNibName = "MessageTableViewCell"
     static let cellIdentifier = "ReusableCell"
-    static let welcomeMessage = "Welcome to MVVM 👋, write something cool 🤙."
+    
+    struct Message {
+        static let placeholder = "Message text"
+    }
     
     struct Styles {
         static let blue = "backgroundBlue"
@@ -31,5 +34,14 @@ struct Constants {
         static let senderField = "sender"
         static let bodyField = "body"
         static let dateField = "date"
+    }
+    
+    struct E {
+        static let messageAppendingError = "MESSAGE APPENDING ERROR:"
+        static let messageLoadingError = "MESSAGE LOADING ERROR:"
+        static let userLogoutError = "SIGN OUT ERROR:"
+        
+        static let userLoginError = "SIGN IN ERROR:"
+        static let userRegisterError = "SIGN UP ERROR:"
     }
 }

@@ -25,7 +25,7 @@ class ChatViewController: UIViewController {
     
     @IBAction private func sendMessageButtonPressed(_ sender: UIButton) {
         guard let messageBody = messageTextField.text, !messageBody.isEmpty else {
-            messageTextField.placeholder = "Type something"
+            messageTextField.placeholder = Constants.Message.placeholder
             return
         }
         viewModel.prepareMessage(by: messageBody)
@@ -39,7 +39,7 @@ class ChatViewController: UIViewController {
     
     private func resetTextField() {
         messageTextField.text = ""
-        messageTextField.placeholder = "Message text"
+        messageTextField.placeholder = Constants.Message.placeholder
     }
     
     private func setupTableDataSource() {

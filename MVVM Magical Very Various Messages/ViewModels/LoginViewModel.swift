@@ -15,7 +15,7 @@ class LoginViewModel: LoginRegisterViewModel {
             if let e = error {
                 strongSelf.setStatus(.failure, value: "\(Constants.FB.loginFailure) \(e.localizedDescription)", type: strongSelf)
                 
-                print("SIGN IN ERROR: \(e.localizedDescription)")
+                print("\(Constants.E.userLoginError) \(e.localizedDescription)")
                 return
             }
             
